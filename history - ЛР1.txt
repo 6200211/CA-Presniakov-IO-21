@@ -1,87 +1,95 @@
-1   uname -a
-2   apt update && apt upgrade
-3   cat /etc/apt/sources.list.d/ubuntu.sources
-4   apt install vim
-5   cd
-6   cd ~/Downloads
-7   man ls
-8   ls -l
-9   exit
-10  cd ~/Downloads
-11  dpkg -i libvlc-bin_3.0.18-2build1_amd64.deb
-12  cd /
-13  sudo -i
-14  cd ~/Downloads
-15  echo "hi all"
-16  echo "$PWD hi all here!"
-17  touch hi.sh
-18  echo $PATH
-19  vi hi.sh
-20  ./hi.sh
-21  chmod +x hi.sh
-22  chmod 777 hi.sh
-23  ./hi.sh
-24  ./hi.sh Ukraine
-25  mkdir ~/scripts
-26  cp hi.sh ~/scripts/
-27  cp ~/scripts/ ~/Documents/
-28  cp -r ~/scripts/ ~/Documents/
-29  cd ~/script
-30  mv hi.sh ...
-31  touch hi.sh
-32  mv hi.sh ...
-33  cd ..
-34  rm ~/scripts
-35  rm -rf ~/scripts
-36  cd /bin
-37  ls -l
-38  cd ../..
-39  mkdir scripts
-40  tar cvf scripts.tar scripts
-41  tar tf scripts.tar
-42  cat /var/log/alternatives.log
-43  tail -n 20 /var/log/alternatives.log
-44  less /var/log/alternatives.log
-45  cd /
-46  find . -name "dhcp"
-47  find . -name "*dhcp*"
-48  find . -iname "*dhcp*"
-49  find . -iname "*dhcp*" | grep -i "etc"
-50  ping -c 5 google.com
-51  (ping google.com & date) >> ~/ping_date_log.txt &
-52  ping google.com
-53  vlc
-54  exit
-55  ls -l
-56  cd /bin
-57  ls
-58  echo $PATH
-59  env
-60  whoami
-61  cd /etc/
-62  ls
-63  cd ..
-64  cd /lib
-65  ls
-66  exit
-67  dmesg | grep -i usb
-68  df -h
-69  cd /home
-70  ls -l
-71  lsmod
-72  cd /proc
-73  cat cpuinfo
-74  echo 1 | tee /proc/sys/net/ipv4/ip_forward
-75  ip addr show
-76  ip link show
-77  cd
-78  echo vika > 1.txt
-79  cat 1.txt
-80  echo vasya > 2.txt
-81  cat 2.txt
-82  diff 1.txt 2.txt
-83  history
-84  lspci
-85  history > history.txt
-
-
+1    sudo -i
+2    uname -a
+3    apt update && apt upgrade
+4    cat /etc/apt/sources.list
+5    apt install vim
+6    cd
+7    cd ~/Downloads
+8    ls --help
+9    ls -l
+10   exit
+11   cd ~/Downloads
+12   wget http://archive.ubuntu.com/ubuntu/pool/universe/v/vlc/libvlc-bin_3.0.18-2build1_amd64.deb
+13   dpkg -i libvlc-bin_3.0.18-2build1_amd64.deb
+14   sudo -i
+15   cd ~/Downloads
+16   dpkg -i libvlc-bin_3.0.18-2build1_amd64.deb
+17   apt --fix-broken install
+18   cd /
+19   sudo -i
+20   exit
+21   echo "hi all"
+22   echo "$PWD hi all here!"
+23   touch hi.sh
+24   echo $PATH
+25   vi hi.sh
+26   ./hi.sh
+27   chmod +x hi.sh
+28   chmod 777 hi.sh
+29   ./hi.sh
+30   ./hi.sh Ukraine
+31   mkdir ~/scripts
+32   cp hi.sh ~/scripts/
+33   cp ~/scripts/ ~/Documents/
+34   cp -r ~/scripts/ ~/Documents/
+35   cd ~/script
+36   mv hi.sh ...
+37   cd ..
+38   rm ~/scripts
+39   rm -rf ~/scripts
+40   cd /bin
+41   ls -l
+42   cd ../..
+43   sudo -i
+44   mkdir scripts
+45   tar cvf scripts.tar scripts
+46   tar tf scripts.tar
+47   cat /var/log/alternatives.log
+48   tail -n 20 /var/log/alternatives.log
+49   less /var/log/alternatives.log
+50   cd /
+51   find . -name "dhcp"
+52   find . -name "*dhcp*"
+53   find . -iname "*dhcp*"
+54   find . -iname "*dhcp*" | grep -i "etc"
+55   ping -c 5 google.com
+56   (ping google.com & date) >> ~/ping_date_log.txt &
+57   ping google.com
+58   vlc
+59   ls -l
+60   cd /bin
+61   ls
+62   echo $PATH
+63   env
+64   whoami
+65   cd /etc/
+66   ls
+67   cd ..
+68   cd /lib
+69   ls
+70   exit
+71   cd /lib
+72   dmesg
+73   sudo dmesg
+74   ls -l /dev
+75   sudo dmesg -C
+76   dmesg | grep -i usb
+77   df -h
+78   cd /home
+79   ls -l
+80   lsmod
+81   cd /proc
+82   cat cpuinfo
+83   echo 1 | tee /proc/sys/net/ipv4/ip_forward
+84   sudo -i
+85   ip addr show
+86   ip link show
+87   cd
+88   echo vika > 1.txt
+89   cat 1.txt
+90   echo vasya > 2.txt
+91   cat 2.txt
+92   diff 1.txt 2.txt
+93   history
+94   lspci
+95   history > history.txt
