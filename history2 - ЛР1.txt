@@ -1,0 +1,8 @@
+1  ping google.com &
+2  fg
+3  Ctrl+Z
+4  ps -eo user,pid,lstart,stat,etime,cmd | grep ping
+5  kill -9 (ID ping google.com)
+6  ps -eo user,pid,lstart,stat,etime,cmd | grep ping
+7  kill -KILL 13235 && sudo kill -KILL 13235
+8  sudo killall vlc
