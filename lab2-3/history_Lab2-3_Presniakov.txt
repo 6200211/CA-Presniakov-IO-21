@@ -1,0 +1,118 @@
+    1  sudo -i
+    2  ls
+    3  sudo -i
+    4  ls
+    5  sudo tar xJvf /path/to/gcc-arm-8.3-2019.03-x86_64-arm-eabi.tar.xz -C /opt/
+    6  sudo tar xJvf gcc-arm-8.3-2019.03-x86_64-arm-eabi.tar.xz -C /opt
+    7  ls
+    8  sudo tar xJvf gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf.tar.xz -C /opt/
+    9  sudo apt install make libncurses5-dev libssl-dev bc bison flex
+   10  mkdir ~/repos
+   11  cd ~/repos
+   12  apt install git
+   13  sudo apt install git
+   14  cd u-boot
+   15  git tag | grep -v rc | tail -5
+   16  git checkout v2019.07
+   17  $ curl https://patchwork.ozlabs.org/series/130450/mbox/ | git am
+   18  sudo apt install curl 
+   19  $ curl https://patchwork.ozlabs.org/series/130450/mbox/ | git am
+   20  git config user.name "ArtemPresniakov"
+   21  git config user.email "6200211@gmail.com"
+   22  $ curl https://patchwork.ozlabs.org/series/130450/mbox/ | git am
+   23  export PATH=/opt/gcc-arm-8.3-2019.03-x86_64-arm-eabi/bin:$PATH
+   24  export CROSS_COMPILE='ccache arm-eabi-'
+   25  export ARCH=arm
+   26  make am335x_boneblack_defconfig
+   27  make -j4
+   28  sudo make -j4
+   29  gcc --version
+   30  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9
+   31  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90
+   32  sudo update-alternatives --install /usr/bin/gcc gcc ~/gcc-9 90
+   33  CC=gcc-9 CXX=g++-9 make
+   34  sudo -i
+   35  sudo make -j4
+   36  gcc --version
+   37  sudo apt-get install gcc-9 g++-9
+   38  sudo make -j4
+   39  sudo make CC=gcc-9 CXX=g++-9 -j4
+   40  nano Makefile
+   41  sudo make -j4
+   42  sudo apt-get install gcc-arm-none-eabi
+   43  sudo make -j4
+   44  arm-none-eabi-gcc --version
+   45  arm-linux-gnueabi-gcc --version
+   46  export CROSS_COMPILE=arm-none-eabi-
+   47  sudo make ARCH=arm CROSS_COMPILE=arm-none-eabi- -j4
+   48  cd ~/repos
+   49  git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+   50  sudo -i
+   51  df -h
+   52  df -h
+   53  cd ~/repos
+   54  git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+   55  lsblk
+   56  sudo apt install grated
+   57  sudo apt install gparted
+   58  sudo gparted
+   59  cd repos
+   60  cd ~/repos
+   61  git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+   62  cd linux-stable
+   63  export CROSS_COMPILE='ccache arm-eabi-'
+   64  export ARCH=arm
+   65  mkdir fragments
+   66  vim fragments/bbb.cfg
+   67  sudo apt install vim
+   68  vim fragments/bbb.cfg
+   69  make -j4 zImage modules am335x-boneblack.dtb
+   70  git clone git://git.busybox.net/busybox
+   71  cd busybox
+   72  git branch -a | grep stable | sort -V | tail -1
+   73  git checkout 1_31_stable
+   74  export ARCH=arm
+   75  export PATH=/opt/gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf/bin:$PATH
+   76  export CROSS_COMPILE="ccache arm-linux-gnueabihf-"
+   77  make defconfig
+   78  make -j4
+   79  make install
+   80  mkdir -p _install/{boot,dev,etc\/init.d,lib,proc,root,sys\/kernel\/debug,tmp}
+   81  sudo i
+   82  sudo -i
+   83  ls
+   84  cd _install/etc/init.d
+   85  nano rcS
+   86  chmod +x _install/etc/init.d/rcS
+   87  cd ../
+   88  cd ~/repos/busybox
+   89  chmod +x _install/etc/init.d/rcS
+   90  ln -s bin/busybox _install/init
+   91  cd _install/boot
+   92  cp ~/repos/linux-stable/arch/arm/boot/zImage .
+   93  cp ~/repos/linux-stable/arch/arm/boot/dts/am335x-boneblack.dtb .
+   94  cp ~/repos/linux-stable/System.map .
+   95  cp ~/repos/linux-stable/.config ./config
+   96  cd -
+   97  cd ~/repos/linux-stable
+   98  export INSTALL_MOD_PATH=~/repos/busybox/_install
+   99  export ARCH=arm
+  100  cd -
+  101  ${CROSS_COMPILE}readelf -d _install/bin/busybox | grep NEEDED
+  102  cd _install/lib
+  103  libc_dir=$(${CROSS_COMPILE}gcc -print-sysroot)/lib
+  104  cd -
+  105  echo '$MODALIAS=.* root:root 660 @modprobe "$MODALIAS"' > _install/etc/mdev.conf
+  106  echo 'root:x:0:' > _install/etc/group
+  107  echo 'root:x:0:0:root:/root:/bin/sh' > _install/etc/passwd
+  108  echo 'root::10933:0:99999:7:::' > _install/etc/shadow
+  109  echo "nameserver 8.8.8.8" > _install/etc/resolv.conf
+  110  cd ~/repos/busybox
+  111  cd _install
+  112  find . | cpio -o -H newc | gzip > ../rootfs.cpio.gz
+  113  cd ..
+  114  qemu-system-arm -kernel _install/boot/zImage -initrd rootfs.cpio.gz -machine virt -nographic -m 512 --append "root=/dev/ram0 rw console=ttyAMA0,115200 mem=512M"
+  115  history >> ~/history_Lab2-3_Presniakov.txt
+  116  history | tail -n 200 >> ~/history_Lab2-3_Presniakov.txt
+  117  history >> ~/history_Lab2-3_Presniakov.txt
+  118  history > ~/history_Lab2-3_Presniakov.txt
